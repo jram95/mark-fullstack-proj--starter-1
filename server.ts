@@ -35,7 +35,28 @@ app.get("/food", async (req,res) => {
     'select food_item from food_items'
   )
   res.json(result.rows)
-})
+});
+
+app.get("/drink", async (req, res) => {
+  const result = await client.query(
+    'select drink_item from drink_items'
+  )
+  res.json(result.rows)
+});
+
+app.get("/ingredients", async (req, res) => {
+  const result = await client.query(
+    'select ingredient from ingredients'
+  )
+  res.json(result.rows)
+});
+
+app.get("/allergens", async (req, res) => {
+  const result = await client.query(
+    'select allergen from allergens'
+  )
+  res.json(result.rows)
+});
 
 //Start the server on the given port
 const port = process.env.PORT;
