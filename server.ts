@@ -30,6 +30,12 @@ app.get("/", async (req, res) => {
   res.send('Connection OK')
 });
 
+app.get("/food", async (req,res) => {
+  const result = await client.query(
+    'select food_item from food_items'
+  )
+  res.json(result.rows)
+})
 
 //Start the server on the given port
 const port = process.env.PORT;
