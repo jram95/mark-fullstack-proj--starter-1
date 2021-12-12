@@ -32,28 +32,28 @@ app.get("/", async (req, res) => {
 
 app.get("/food", async (req,res) => {
   const result = await client.query(
-    'select food_item from food_items'
+    'select * from food_items'
   )
   res.json(result.rows)
 });
 
 app.get("/drink", async (req, res) => {
   const result = await client.query(
-    'select drink_item from drink_items'
+    'select * from drink_items'
   )
   res.json(result.rows)
 });
 
 app.get("/ingredients", async (req, res) => {
   const result = await client.query(
-    'select ingredient from ingredients'
+    'select * from ingredients'
   )
   res.json(result.rows)
 });
 
 app.get("/allergens", async (req, res) => {
   const result = await client.query(
-    'select allergen from allergens'
+    'select * from allergens'
   )
   res.json(result.rows)
 });
