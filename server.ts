@@ -44,6 +44,13 @@ app.get("/drink", async (req, res) => {
   res.json(result.rows)
 });
 
+app.get("/prices", async (req,res) => {
+  const result = await client.query(
+    'select * from prices'
+  )
+  res.json(result.rows)
+});
+
 app.get("/ingredients", async (req, res) => {
   const result = await client.query(
     'select * from ingredients'
